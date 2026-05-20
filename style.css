@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-color: #050505;
+    --text-main: #ffffff;
+    --accent: #e3000b;
+    --accent-glow: rgba(227, 0, 11, 0.4);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+html { scroll-behavior: auto !important; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color) !important;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+    color: var(--text-main);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* NAVBAR */
+.navbar { z-index: 9999; background: rgba(5, 5, 5, 0.8) !important; backdrop-filter: blur(15px); border-bottom: 1px solid var(--border-color); transition: 0.3s; }
+.navbar-brand h1 { font-size: 1.8rem !important; font-weight: 800; margin: 0; color: var(--text-main); letter-spacing: 1px; }
+.navbar-brand h1 span { color: var(--accent); }
+.nav-link { font-size: 1rem !important; font-weight: 600; letter-spacing: 1px; transition: 0.3s; color: #aaa !important; }
+.nav-link:hover, .nav-link.active { color: var(--accent) !important; }
+
+/* GLASS CARD & FORMS */
+.glass-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.form-control {
+    background: rgba(0,0,0,0.5) !important;
+    border: 1px solid var(--border-color) !important;
+    color: #fff !important;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-family: 'Outfit';
+    transition: 0.3s;
+}
+.form-control:focus { border-color: var(--accent) !important; box-shadow: 0 0 15px var(--accent-glow) !important; }
+.form-label { color: #aaa; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; }
+
+/* BUTTONS */
+.btn-jkt {
+    background: var(--accent); color: #fff; border: none; padding: 15px 30px;
+    border-radius: 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
+    transition: 0.3s; width: 100%; display: inline-block; text-align: center; text-decoration: none;
+}
+.btn-jkt:hover { background: #fff; color: var(--accent); box-shadow: 0 10px 25px var(--accent-glow); transform: translateY(-3px); }
+
+/* HERO VIDEO (Home) */
+.hero-wrapper { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; }
+.video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(5,5,5,1)); z-index: 1; }
+#bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.5; }
+.hero-content { position: relative; z-index: 2; text-align: center; }
+.hero-content h2 { font-size: 4rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+.hero-content span { color: var(--accent); }
+
+/* GRID & IMAGES (About) */
+.oshi-img { width: 100%; height: 400px; object-fit: cover; border-radius: 20px; border: 1px solid var(--border-color); transition: 0.5s; filter: grayscale(80%); }
+.oshi-img:hover { filter: grayscale(0%); border-color: var(--accent); transform: scale(1.02); }
+
+/* PRELOADER */
+#preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--bg-color); z-index: 10000; display: flex; justify-content: center; align-items: center; text-align: center; }
+.loader-text { font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 20px; font-weight: 800; }
+.loader-bar-bg { width: 200px; height: 2px; background: #333; margin: 0 auto; }
+#loader-bar { width: 0%; height: 100%; background: var(--accent); transition: width 0.1s linear; }
+
+/* UTILS */
+.page-header { padding-top: 150px; padding-bottom: 50px; text-align: center; }
+.page-title { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; }
+.page-title span { color: var(--accent); }
+.min-vh-custom { min-height: calc(100vh - 100px); }
